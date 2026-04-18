@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- NavigationBar -->
+    <!-- (Epic 1) NavigationBar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
@@ -29,29 +29,55 @@
         </div>
     </nav>
 
-    <!-- Content placeholders for next epics -->
     <main id="main-content">
-            <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1>The Last POS System <br><span>You'll Ever Need</span></h1>
-                <p>Streamline your sales, manage inventory, and grow your business with the most intuitive POS software on the market.</p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">Get Started for Free</a>
-                    <a href="#features" class="btn-link">See how it works <i class="fas fa-arrow-right"></i></a>
+        <!-- (Epic 2) Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>The Last POS System <br><span>You'll Ever Need</span></h1>
+                    <p>Streamline your sales, manage inventory, and grow your business with the most intuitive POS software on the market.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Get Started for Free</a>
+                        <a href="#features" class="btn-link">See how it works <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="https://via.placeholder.com/600x400" alt="QuickPOS Dashboard">
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="https://via.placeholder.com/600x400" alt="QuickPOS Dashboard">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- (Epic 3) Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Powerful tools for your business</h2>
+                    <p>Everything you need to manage your business efficiently in one place.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                        <h3>Fast Checkout</h3>
+                        <p>Process transactions in seconds with our optimized interface.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                        <h3>Real-time Analytics</h3>
+                        <p>Beautiful dashboards to help you make smarter business decisions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fas fa-boxes"></i></div>
+                        <h3>Inventory Control</h3>
+                        <p>Automated stock tracking and reorder alerts across all locations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- JS Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>
