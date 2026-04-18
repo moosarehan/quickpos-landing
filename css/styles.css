@@ -87,3 +87,25 @@ body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.6; }
 .pricing-card li { margin-bottom: 12px; color: var(--gray); }
 .pricing-card li i { color: var(--secondary); margin-right: 10px; }
 .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+
+
+
+
+
+
+
+
+
+
+/* CONTACT SECTION */
+.contact { padding: 100px 0; background: var(--white); }
+.contact-box { max-width: 600px; margin: 40px auto 0; background: var(--white); padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.05); }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.form-group label { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+.form-group input, .form-group textarea { width: 100%; padding: 14px 20px; border-radius: 10px; border: 1.5px solid #eee; font-family: inherit; font-size: 1rem; transition: var(--transition); }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--primary); outline: none; background: #fff; box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1); }
+
+/* SUCCESS RESPONSES */
+.success-message { color: var(--secondary); font-weight: 600; margin-top: 15px; }
+.error-message { color: #ff7675; font-weight: 600; margin-top: 15px; }

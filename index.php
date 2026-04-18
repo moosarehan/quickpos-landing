@@ -126,6 +126,40 @@
         </div>
     </section>
 
+
+
+
+
+
+
+        <!-- (Epic 5) Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to get started?</h2>
+                <p>Send us a message and our team will be in touch shortly.</p>
+            </div>
+            <div class="contact-box">
+                <form action="process_contact.php" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" placeholder="Tell us about your business..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
     <!-- JS Scripts -->
     <script src="js/main.js"></script>
 </body>
