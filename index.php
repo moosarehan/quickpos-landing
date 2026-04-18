@@ -77,6 +77,55 @@
         </section>
     </main>
 
+
+
+
+
+
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Pricing for any scale</h2>
+                <p>Choose the plan that fits your business needs perfectly.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">$29<span>/mo</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 1 Register</li>
+                        <li><i class="fas fa-check"></i> Standard Reports</li>
+                        <li><i class="fas fa-check"></i> 5:00-18:00 Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$79<span>/mo</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 5 Registers</li>
+                        <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                        <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$199<span>/mo</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited Registers</li>
+                        <li><i class="fas fa-check"></i> Custom Integrations</li>
+                        <li><i class="fas fa-check"></i> Dedicated Manager</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- JS Scripts -->
     <script src="js/main.js"></script>
 </body>
