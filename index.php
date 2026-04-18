@@ -126,6 +126,85 @@
         </div>
     </section>
 
+
+
+
+
+
+
+        <!-- (Epic 5) Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to get started?</h2>
+                <p>Send us a message and our team will be in touch shortly.</p>
+            </div>
+            <div class="contact-box">
+                <form action="process_contact.php" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" placeholder="Tell us about your business..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+        <!-- (Epic 6) Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="color:#fff">
+                    <i class="fas fa-cash-register"></i> Quick<span>POS</span>
+                </a>
+                <p>The modern point of sale solution for retail, restaurants, and hospitality businesses.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#contact">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 QuickPOS Software. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
     <!-- JS Scripts -->
     <script src="js/main.js"></script>
 </body>
