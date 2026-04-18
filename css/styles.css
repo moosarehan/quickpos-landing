@@ -37,3 +37,18 @@ body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.6; }
     .nav-links, .nav-cta { display: none; }
     .hamburger { display: block; }
 }
+
+
+
+/* HERO */
+.hero { padding: 160px 0 80px; background: radial-gradient(circle at top right, #fdfbff 0%, #f0f7f7 100%); overflow: hidden; }
+.hero-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+.hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; color: var(--dark); }
+.hero h1 span { color: var(--primary); }
+.hero p { font-size: 1.15rem; color: var(--gray); margin-bottom: 32px; max-width: 500px; }
+.hero-actions { display: flex; align-items: center; gap: 24px; }
+.btn-link { text-decoration: none; color: var(--dark); font-weight: 600; display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+.btn-link:hover { color: var(--primary); gap: 12px; }
+.hero-image { position: relative; }
+.image-wrapper { background: var(--white); padding: 10px; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+.hero-image img { width: 100%; border-radius: calc(var(--radius) - 2px); }
