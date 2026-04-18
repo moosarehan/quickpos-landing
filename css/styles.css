@@ -109,3 +109,24 @@ body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.6; }
 /* SUCCESS RESPONSES */
 .success-message { color: var(--secondary); font-weight: 600; margin-top: 15px; }
 .error-message { color: #ff7675; font-weight: 600; margin-top: 15px; }
+
+
+
+
+
+
+
+
+/* FOOTER */
+.footer { background: var(--dark); color: var(--white); padding: 80px 0 30px; margin-top: 50px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 50px; }
+.footer-brand p { color: #aaa; margin-top: 15px; max-width: 300px; font-size: 0.95rem; }
+.footer-links h4, .footer-social h4 { font-size: 1.1rem; margin-bottom: 25px; color: var(--white); }
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #aaa; text-decoration: none; transition: var(--transition); }
+.footer-links a:hover { color: var(--secondary); }
+.social-icons { display: flex; gap: 15px; }
+.social-icons a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: var(--transition); }
+.social-icons a:hover { background: var(--primary); transform: translateY(-3px); }
+.footer-bottom { text-align: center; padding-top: 30px; color: #666; font-size: 0.9rem; }
