@@ -30,7 +30,27 @@
     </nav>
 
     <!-- Content placeholders for next epics -->
-    <main id="main-content"></main>
+    <main id="main-content">
+            <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>The Last POS System <br><span>You'll Ever Need</span></h1>
+                <p>Streamline your sales, manage inventory, and grow your business with the most intuitive POS software on the market.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Get Started for Free</a>
+                    <a href="#features" class="btn-link">See how it works <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="https://via.placeholder.com/600x400" alt="QuickPOS Dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <script src="js/main.js"></script>
 </body>
