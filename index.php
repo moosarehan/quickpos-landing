@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- (Epic 1) NavigationBar -->
@@ -43,7 +43,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="image-wrapper">
-                        <img src="https://via.placeholder.com/600x400" alt="QuickPOS Dashboard">
+                        <img src="images/hero-mockup.png" alt="QuickPOS Dashboard">
                     </div>
                 </div>
             </div>
@@ -75,62 +75,49 @@
                 </div>
             </div>
         </section>
-    </main>
 
-
-
-
-
-
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simple Pricing for any scale</h2>
-                <p>Choose the plan that fits your business needs perfectly.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic</h3>
-                    <div class="price">$29<span>/mo</span></div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 1 Register</li>
-                        <li><i class="fas fa-check"></i> Standard Reports</li>
-                        <li><i class="fas fa-check"></i> 5:00-18:00 Support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline">Get Started</a>
+        <!-- (Epic 4) Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Simple Pricing for any scale</h2>
+                    <p>Choose the plan that fits your business needs perfectly.</p>
                 </div>
-                <div class="pricing-card featured">
-                    <div class="badge">Most Popular</div>
-                    <h3>Pro</h3>
-                    <div class="price">$79<span>/mo</span></div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 5 Registers</li>
-                        <li><i class="fas fa-check"></i> Advanced Analytics</li>
-                        <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">$199<span>/mo</span></div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Unlimited Registers</li>
-                        <li><i class="fas fa-check"></i> Custom Integrations</li>
-                        <li><i class="fas fa-check"></i> Dedicated Manager</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline">Contact Sales</a>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <div class="price">$29<span>/mo</span></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 1 Register</li>
+                            <li><i class="fas fa-check"></i> Standard Reports</li>
+                            <li><i class="fas fa-check"></i> 5:00-18:00 Support</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <div class="price">$79<span>/mo</span></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 5 Registers</li>
+                            <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                            <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <div class="price">$199<span>/mo</span></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Unlimited Registers</li>
+                            <li><i class="fas fa-check"></i> Custom Integrations</li>
+                            <li><i class="fas fa-check"></i> Dedicated Manager</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Contact Sales</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-
-
-
-
-
+        </section>
 
         <!-- (Epic 5) Contact Section -->
     <section class="contact" id="contact">
@@ -206,6 +193,51 @@
 
 
     <!-- JS Scripts -->
-    <script src="js/main.js"></script>
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                // Fallback for non-CSS toggle logic
+                if (navLinks.classList.contains('active')) {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '70px';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = '#fff';
+                    navLinks.style.padding = '20px';
+                    navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                } else {
+                    navLinks.style.display = 'none';
+                }
+            });
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
