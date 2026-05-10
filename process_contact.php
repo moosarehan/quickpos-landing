@@ -1,42 +1,22 @@
 <?php
-// [SCRUM-58] process_contact.php — Fixed whitespace-only input validation
+// [SCRUM-58] Fixed: Added input sanitization and email format validation
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
-    exit;
+// Sanitize all inputs to prevent XSS (BUG-003)
+$name    = htmlspecialchars(trim($_POST['name'] ?? ''));
+$email   = htmlspecialchars(trim($_POST['email'] ?? ''));
+$message = htmlspecialchars(trim($_POST['message'] ?? ''));
+
+// Validate empty fields
+if (empty($name) || empty($email) || empty($message)) {
+    die("Error: All fields are required.");
 }
 
-// FIX: trim() is applied to ALL fields before validation
-// This ensures whitespace-only inputs are treated as empty
-$name    = trim($_POST['name']    ?? '');
-$email   = trim($_POST['email']   ?? '');
-$message = trim($_POST['message'] ?? '');
-
-// Validate: name cannot be empty or whitespace-only
-if (empty($name)) {
-    header('Location: index.php?error=Name+is+required#contact');
-    exit;
-}
-
-// Validate: email cannot be empty or whitespace-only
-if (empty($email)) {
-    header('Location: index.php?error=Email+address+is+required#contact');
-    exit;
-}
-
-// Validate: email must be a valid format
+// Validate email format (BUG-001)
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header('Location: index.php?error=Please+enter+a+valid+email+address#contact');
-    exit;
+    die("Error: Please enter a valid email address.");
 }
 
-// Validate: message cannot be empty or whitespace-only
-if (empty($message)) {
-    header('Location: index.php?error=Message+cannot+be+empty#contact');
-    exit;
-}
-
-// All validations passed — redirect to success page
-header('Location: thank-you.html');
+// Redirect to success page
+header("Location: thank-you.html");
 exit;
 ?>
