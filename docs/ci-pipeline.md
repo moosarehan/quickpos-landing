@@ -1,4 +1,4 @@
-# CI/CD Pipeline Documentation
+# CI/CD Pipeline Documentation we are implementing this for quickpos project
 
 **Ticket:** SCRUM-57
 **Branch:** feature/SCRUM-57-status-badge
