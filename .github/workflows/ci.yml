@@ -84,6 +84,7 @@ jobs:
         run: ./vendor/bin/phpunit --colors=always --log-junit test-results.xml
 
       - name: Upload Test Results as Artifact
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: phpunit-test-results
@@ -98,5 +99,4 @@ jobs:
     needs: [code-quality, automated-tests]
     steps:
       - name: All Checks Passed
-        run: echo "✅ All CI checks passed. Safe to merge into main."
         run: echo "✅ All CI checks passed. Safe to merge into main."
