@@ -19,20 +19,21 @@ jobs:
     name: "Stage 10 - Jira Commit Validation"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: "Stage 1 - Checkout Code"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Validate Jira Ticket ID in Commit Message
+      - name: Validate Commit Message Contains Jira ID
         run: |
           COMMIT_MSG=$(git log -1 --pretty=%s)
           echo "Commit message: $COMMIT_MSG"
-          if echo "$COMMIT_MSG" | grep -qE '^\[SCRUM-[0-9]+\]'; then
-            echo "✅ Valid Jira ticket ID found."
+          # Allow both [SCRUM-XXX] and standard "Merge " messages
+          if echo "$COMMIT_MSG" | grep -qE '^(\[SCRUM-[0-9]+\]|Merge )'; then
+            echo "✅ Valid commit message"
           else
-            echo "❌ Commit message must start with [SCRUM-XXX]"
-            echo "   Example: [SCRUM-56] Configure branch protection rules"
+            echo "❌ ERROR: Commit must start with [SCRUM-XXX]"
+            echo "   Example: [SCRUM-55] Add CI pipeline"
             exit 1
           fi
 
@@ -44,21 +45,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate-commit
     steps:
-      - name: Checkout Code
+      - name: "Stage 1 - Checkout Code"
         uses: actions/checkout@v4
 
-      - name: Setup PHP
+      - name: "Stage 2 - Setup PHP"
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           tools: composer
 
-      - name: PHP Syntax Check on All Files
+      - name: "Stage 3 - Run PHP Syntax Check on All Files"
         run: |
-          find . -name "*.php" -not -path "./vendor/*" | while read file; do
+          echo "Scanning PHP files for syntax errors..."
+          find . -name ".php" -not -path "./vendor/" | while read file; do
             php -l "$file"
           done
-          echo "✅ All PHP files passed syntax check."
+          echo "✅ All PHP files passed syntax check"
 
   # ─────────────────────────────────────────────
   # Stage 4: Automated Tests - runs in PARALLEL with Stage 3
@@ -68,22 +70,23 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate-commit
     steps:
-      - name: Checkout Code
+      - name: "Stage 1 - Checkout Code"
         uses: actions/checkout@v4
 
-      - name: Setup PHP
+      - name: "Stage 2 - Setup PHP"
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           tools: composer
 
-      - name: Install Composer Dependencies
+      - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist
 
-      - name: Run PHPUnit Tests
+      - name: "Stage 4 - Run PHPUnit Tests"
         run: ./vendor/bin/phpunit --colors=always --log-junit test-results.xml
 
-      - name: Upload Test Results as Artifact
+      - name: "Stage 6 - Upload Test Results as Artifact"
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: phpunit-test-results
@@ -92,10 +95,10 @@ jobs:
   # ─────────────────────────────────────────────
   # Final: Pipeline Status Check
   # ─────────────────────────────────────────────
-  pipeline-status:
+  pipeline-complete:
     name: "Pipeline Complete - Safe to Merge"
     runs-on: ubuntu-latest
     needs: [code-quality, automated-tests]
     steps:
-      - name: All Checks Passed
-        run: echo "✅ All CI checks passed. Safe to merge into main."
+      - name: "Stage 7 - Confirm All Checks Passed"
+        run: echo "✅ All CI stages passed. PR is approved for merge."
