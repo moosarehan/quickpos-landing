@@ -1,4 +1,4 @@
-# [SCRUM-55] QuickPOS CI/CD Pipeline - All 11 Stages
+
 name: QuickPOS CI Pipeline
 
 on:
@@ -26,7 +26,7 @@ jobs:
 
       - name: Validate Jira Ticket ID in Commit Message
         run: |
-          COMMIT_MSG=$(git log -1 --pretty=%s)
+          COMMIT_MSG=$(git log --pretty=%s --no-merges -1)
           echo "Commit message: $COMMIT_MSG"
           if echo "$COMMIT_MSG" | grep -qE '^\[SCRUM-[0-9]+\]'; then
             echo "✅ Valid Jira ticket ID found."
@@ -84,7 +84,6 @@ jobs:
         run: ./vendor/bin/phpunit --colors=always --log-junit test-results.xml
 
       - name: Upload Test Results as Artifact
-        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: phpunit-test-results
