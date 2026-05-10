@@ -1,8 +1,6 @@
-
 # QuickPOS Landing Page
 
 ![CI Pipeline](https://github.com/moosarehan/quickpos-landing/actions/workflows/ci.yml/badge.svg)
-
 
 A premium, professional, and responsive landing page for the **QuickPOS** system. This project was developed as part of a Software Project Management assignment, focusing on high-quality UI/UX and professional development workflows (Jira, GitFlow, and Slack integration).
 
@@ -21,14 +19,14 @@ A premium, professional, and responsive landing page for the **QuickPOS** system
 ## 📋 Setup Instructions
 To run this project locally, follow these steps:
 
-1.  **Install XAMPP**: Ensure you have XAMPP installed on your machine.
-2.  **Clone the Repository**: Clone this repo into your XAMPP `htdocs` folder:
-    ```bash
-    git clone https://github.com/moosarehan/quickpos-landing.git
-    ```
-3.  **Start Apache**: Open the XAMPP Control Panel and start the **Apache** server.
-4.  **Access the Website**: Open your browser and navigate to:
-    `http://localhost/quickpos-landing/`
+1. **Install XAMPP**: Ensure you have XAMPP installed on your machine.
+2. **Clone the Repository**: Clone this repo into your XAMPP `htdocs` folder:
+```bash
+   git clone https://github.com/moosarehan/quickpos-landing.git
+```
+3. **Start Apache**: Open the XAMPP Control Panel and start the **Apache** server.
+4. **Access the Website**: Open your browser and navigate to:
+   `http://localhost/quickpos-landing/`
 
 ## 📊 Process Rigor
 - **Jira**: Project tracking with Epics, Stories, and Tasks.
@@ -36,4 +34,4 @@ To run this project locally, follow these steps:
 - **Slack**: Real-time notifications for all commits and Pull Requests.
 
 ---
-*Created for the SPM Assignment.* this is readme give me non conflicted readme
+*Created for the SPM Assignment.*
