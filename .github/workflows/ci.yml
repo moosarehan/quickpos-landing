@@ -1,4 +1,4 @@
-# [SCRUM-55] QuickPOS CI/CD Pipeline - All 11 Stages
+
 name: QuickPOS CI Pipeline
 
 on:
@@ -26,7 +26,7 @@ jobs:
 
       - name: Validate Commit Message Contains Jira ID
         run: |
-          COMMIT_MSG=$(git log -1 --pretty=%s)
+          COMMIT_MSG=$(git log --pretty=%s --no-merges -1)
           echo "Commit message: $COMMIT_MSG"
           # Allow both [SCRUM-XXX] and standard "Merge " messages
           if echo "$COMMIT_MSG" | grep -qE '^(\[SCRUM-[0-9]+\]|Merge )'; then
@@ -100,5 +100,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: [code-quality, automated-tests]
     steps:
-      - name: "Stage 7 - Confirm All Checks Passed"
-        run: echo "✅ All CI stages passed. PR is approved for merge."
+      - name: All Checks Passed
+        run: echo "✅ All CI checks passed. Safe to merge into main."
