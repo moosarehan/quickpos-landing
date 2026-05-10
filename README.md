@@ -1,3 +1,4 @@
+
 # QuickPOS Landing Page
 
 ![CI Pipeline](https://github.com/moosarehan/quickpos-landing/actions/workflows/ci.yml/badge.svg)
@@ -35,4 +36,4 @@ To run this project locally, follow these steps:
 - **Slack**: Real-time notifications for all commits and Pull Requests.
 
 ---
-*Created for the SPM Assignment.*
+*Created for the SPM Assignment.* this is readme give me non conflicted readme
