@@ -28,7 +28,8 @@ jobs:
         run: |
           COMMIT_MSG=$(git log -1 --pretty=%s)
           echo "Commit message: $COMMIT_MSG"
-          if echo "$COMMIT_MSG" | grep -qE '^\[SCRUM-[0-9]+\]'; then
+          # Allow both [SCRUM-XXX] and standard "Merge " messages
+          if echo "$COMMIT_MSG" | grep -qE '^(\[SCRUM-[0-9]+\]|Merge )'; then
             echo "✅ Valid commit message"
           else
             echo "❌ ERROR: Commit must start with [SCRUM-XXX]"
