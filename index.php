@@ -15,12 +15,12 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <i class="fas fa-cash-register"></i> Quick<span>POS</span>
+                <i class="fas fa-cash-register"></i> QUICK<span>POS</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#features">FEATURES</a></li>
+                <li><a href="#pricing">PRICING</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
             <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
             <button class="hamburger" id="hamburger">
